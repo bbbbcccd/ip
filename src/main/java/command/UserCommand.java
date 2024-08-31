@@ -1,7 +1,9 @@
 package command;
 
-import exception.*;
-import task.*;
+import exception.InvalidCommandException;
+import exception.LevelHundredException;
+import task.Storage;
+import task.TaskList;
 import ui.Ui;
 
 /**
@@ -26,6 +28,8 @@ public abstract class UserCommand {
                 return new AddCommand();
             case "delete":
                 return new DeleteCommand();
+            case "find":
+                return new FindCommand();
             default:
                 throw new InvalidCommandException();
         }

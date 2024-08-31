@@ -31,4 +31,15 @@ public class TaskList {
     public int size() {
         return this.taskList.size();
     }
+
+    public ArrayList<Task> filterByKeyword(String keyword) {
+        ArrayList<Task> filteredTasks = new ArrayList<>();
+        for (Task t : this.taskList) {
+            if (t.getDescription().contains(keyword)) {
+                filteredTasks.add(t);
+            }
+        }
+
+        return filteredTasks;
+    }
 }

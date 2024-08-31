@@ -1,8 +1,8 @@
 package ui;
 
-import task.Task;
-
 import java.util.ArrayList;
+
+import task.Task;
 
 public class Ui {
     private final int lineLength = 50;
@@ -43,9 +43,22 @@ public class Ui {
 
     public void printTasks(ArrayList<Task> tasks) {
         this.printHorizontalLine();
-        if (tasks.size() == 0) {
+        if (tasks.isEmpty()) {
             System.out.println("\tNo tasks yet");
         } else {
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println("\t" + (i + 1) + "." + tasks.get(i).toString());
+            }
+        }
+        this.printHorizontalLine();
+    }
+
+    public void printMatchingTasks(ArrayList<Task> tasks) {
+        this.printHorizontalLine();
+        if (tasks.isEmpty()) {
+            System.out.println("\t No matching tasks found");
+        } else {
+            System.out.println("\tHere are the matching tasks in your list");
             for (int i = 0; i < tasks.size(); i++) {
                 System.out.println("\t" + (i + 1) + "." + tasks.get(i).toString());
             }
