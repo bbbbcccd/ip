@@ -53,6 +53,11 @@ public class Ui {
         this.printHorizontalLine();
     }
 
+    /**
+     * Prints tasks that matches the keyword
+     *
+     * @param tasks ArrayList of tasks that matches the keyword
+     */
     public void printMatchingTasks(ArrayList<Task> tasks) {
         this.printHorizontalLine();
         if (tasks.isEmpty()) {
